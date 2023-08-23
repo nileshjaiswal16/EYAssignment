@@ -7,17 +7,64 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "131A6B60-2595-41B0-BFD1-195433E5EAC7"
+            uuid = "83AF4A66-08FF-4FE5-A646-ABBF28C0F3AA"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "EYAssignment/Views/FavouriteView.swift"
+            filePath = "EYAssignment/Models/LocalFileManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "trendingItems"
-            landmarkType = "24">
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "saveData(tempURL:toFile:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "83AF4A66-08FF-4FE5-A646-ABBF28C0F3AA - 9e3183643d25d254"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EYAssignment.LocalFileManager.saveData(tempURL: Foundation.URL, toFile: Swift.String) -&gt; ()"
+                  moduleName = "EYAssignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/EYAssignment/EYAssignment/Models/LocalFileManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "481">
+               </Location>
+               <Location
+                  uuid = "83AF4A66-08FF-4FE5-A646-ABBF28C0F3AA - 9e3183643d25d254"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EYAssignment.LocalFileManager.saveData(tempURL: Foundation.URL, toFile: Swift.String) -&gt; ()"
+                  moduleName = "EYAssignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/EYAssignment/EYAssignment/Models/LocalFileManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "747">
+               </Location>
+               <Location
+                  uuid = "83AF4A66-08FF-4FE5-A646-ABBF28C0F3AA - 9e3183643d25d254"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EYAssignment.LocalFileManager.saveData(tempURL: Foundation.URL, toFile: Swift.String) -&gt; ()"
+                  moduleName = "EYAssignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/EYAssignment/EYAssignment/Models/LocalFileManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "2265">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

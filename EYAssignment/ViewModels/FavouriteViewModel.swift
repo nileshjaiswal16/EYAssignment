@@ -10,11 +10,11 @@ import SwiftUI
 
 @MainActor
 class FavouriteViewModel: ObservableObject {
-
-   
+    
+    
     @Published private(set) var favourites: [TrendingItem] = []
     private let bookmarkStore = DataStore<[TrendingItem]>(filename: "bookmarks")
-    var fileManager = LocalFileManager.instance
+    var fileManager = LocalFileManager()
     static let shared = FavouriteViewModel()
     private init() {
         Task {

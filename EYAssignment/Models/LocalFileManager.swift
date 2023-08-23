@@ -9,7 +9,6 @@ import Foundation
 
 class LocalFileManager {
     
-    static let instance = LocalFileManager()
     
     func deleteImage(toFile:String)  {
         guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
