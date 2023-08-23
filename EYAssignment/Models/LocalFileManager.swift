@@ -2,7 +2,7 @@
 //  FIleManager.swift
 //  EYAssignment
 //
-//  Created by Admin on 22/08/23.
+//  Created by Nilesh Jaiswal on 22/08/23.
 //
 
 import Foundation
@@ -43,7 +43,6 @@ class LocalFileManager {
                   at: tempURL,
                   to: fileURL
             )
-                print("Image ID: \(toFile) \(tempURL) \(fileURL)")
             } catch let error {
                 print("error saving file with error", error)
             }
@@ -79,7 +78,6 @@ class LocalFileManager {
 
           if let dirPath = paths.first {
               let imageUrl = URL(fileURLWithPath: dirPath).appendingPathComponent(name)
-              print(imageUrl.path)
               
               if let data = try? Data(contentsOf: URL(fileURLWithPath: imageUrl.path)) {
                   //  let image = UIImage(contentsOfFile: imageUrl.path)

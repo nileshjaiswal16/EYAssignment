@@ -2,7 +2,7 @@
 //  HomeView.swift
 //  EYAssignment
 //
-//  Created by Admin on 19/08/23.
+//  Created by Nilesh Jaiswal on 19/08/23.
 //
 
 import SwiftUI
@@ -37,8 +37,8 @@ struct HomeView: View {
         switch trendingItemVM.phase {
         case .empty:
             ProgressView()
-        case .success(let articles) where articles.isEmpty:
-            EmptyPlaceholderView(text: "No Articles", image: nil)
+        case .success(let trendingItem) where trendingItem.isEmpty:
+            EmptyPlaceholderView(text: "No Items", image: nil)
         case .failure(_):
             EmptyView()
         default: EmptyView()

@@ -2,7 +2,7 @@
 //  HomeListViewCell.swift
 //  EYAssignment
 //
-//  Created by Admin on 19/08/23.
+//  Created by Nilesh Jaiswal on 19/08/23.
 //
 
 import SwiftUI
@@ -40,11 +40,11 @@ struct HomeListViewCell: View {
         .padding([.horizontal, .bottom])
     }
 
-private func toggleBookmark(for article: TrendingItem) {
-    if favouriteVM.isBookmarked(for: article) {
-        favouriteVM.removeBookmark(for: article)
+private func toggleBookmark(for trendingItem: TrendingItem) {
+    if favouriteVM.isBookmarked(for: trendingItem) {
+        favouriteVM.removeBookmark(for: trendingItem)
     } else {
-        favouriteVM.addBookmark(for: article)
+        favouriteVM.addBookmark(for: trendingItem)
     }
   }
 }

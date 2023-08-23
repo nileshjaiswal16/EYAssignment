@@ -2,7 +2,7 @@
 //  HomeViewModel.swift
 //  EYAssignment
 //
-//  Created by Admin on 19/08/23.
+//  Created by Nilesh Jaiswal on 19/08/23.
 //
 
 import Foundation
@@ -23,10 +23,10 @@ class HomeViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var phase = DataFetchPhase<[TrendingItem]>.empty
     @Published var fetchTaskToken: FetchTaskToken
-   // private let gifAPI = GifAPI.shared
+    // private let gifAPI = GifAPI.shared
     
     private let gifAPI: ServiceProtocol
-
+    
     init(trendingItems: [TrendingItem]? = nil, gifAPI:ServiceProtocol) {
         if let trendingItems = trendingItems {
             self.phase = .success(trendingItems)
@@ -35,7 +35,7 @@ class HomeViewModel: ObservableObject {
         }
         self.gifAPI = gifAPI
         self.fetchTaskToken = FetchTaskToken(token: Date())
-       
+        
     }
     
     func fetchTrendingItems() async {

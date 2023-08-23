@@ -2,7 +2,7 @@
 //  FavouriteViewModel.swift
 //  EYAssignment
 //
-//  Created by Admin on 19/08/23.
+//  Created by Nilesh Jaiswal on 19/08/23.
 //
 
 import Foundation
@@ -28,26 +28,26 @@ class FavouriteViewModel: ObservableObject {
         favourites = await bookmarkStore.load() ?? []
     }
     
-    func isBookmarked(for article: TrendingItem) -> Bool {
-        favourites.first { article.id == $0.id } != nil
+    func isBookmarked(for trendingItem: TrendingItem) -> Bool {
+        favourites.first { trendingItem.id == $0.id } != nil
     }
     
-    func addBookmark(for article: TrendingItem) {
-        guard !isBookmarked(for: article) else {
+    func addBookmark(for trendingItem: TrendingItem) {
+        guard !isBookmarked(for: trendingItem) else {
             return
         }
-        downloadfile(for: article)
-        favourites.insert(article, at: 0)
+        downloadfile(for: trendingItem)
+        favourites.insert(trendingItem, at: 0)
         bookmarkUpdated()
     }
-    func downloadfile(for article:TrendingItem) {
-        fileManager.download(url: URL(string: article.images?.original?.url ?? "") ?? URL(fileURLWithPath: ""), toFile: article.id ?? "")
+    func downloadfile(for trendingItem:TrendingItem) {
+        fileManager.download(url: URL(string: trendingItem.images?.original?.url ?? "") ?? URL(fileURLWithPath: ""), toFile: trendingItem.id ?? "")
     }
-    func removeBookmark(for article: TrendingItem) {
-        guard let index = favourites.firstIndex(where: { $0.id == article.id }) else {
+    func removeBookmark(for trendingItem: TrendingItem) {
+        guard let index = favourites.firstIndex(where: { $0.id == trendingItem.id }) else {
             return
         }
-        fileManager.deleteImage(toFile: article.id ?? "")
+        fileManager.deleteImage(toFile: trendingItem.id ?? "")
         favourites.remove(at: index)
         bookmarkUpdated()
     }

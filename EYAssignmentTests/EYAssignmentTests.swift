@@ -2,7 +2,7 @@
 //  EYAssignmentTests.swift
 //  EYAssignmentTests
 //
-//  Created by Admin on 19/08/23.
+//  Created by Nilesh Jaiswal on 19/08/23.
 //
 
 import XCTest
@@ -22,8 +22,8 @@ final class EYAssignmentTests: XCTestCase {
         switch phase {
         case .empty:
             XCTAssertFalse(loading, "isLoading should be false")
-        case .success(let articles):
-            XCTAssertTrue(!articles.isEmpty, "Items should not be empty")
+        case .success(let trendingItem):
+            XCTAssertTrue(!trendingItem.isEmpty, "Items should not be empty")
         default: break
         }
         

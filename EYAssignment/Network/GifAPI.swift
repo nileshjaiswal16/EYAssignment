@@ -2,7 +2,7 @@
 //  GifAPI.swift
 //  EYAssignment
 //
-//  Created by Admin on 19/08/23.
+//  Created by Nilesh Jaiswal on 19/08/23.
 //
 
 import Foundation
@@ -67,7 +67,6 @@ final class GifAPI: ServiceProtocol {
         let percentEncodedString = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? query
         
         let url = "https://api.giphy.com/v1/gifs/search?api_key=6IDzHHc87gA5fUXk0jIe6afMSwpKUCam&q=\(percentEncodedString)&limit=10&offset=0&rating=g&lang=en&bundle=messaging_non_clips"
-        print(url)
        
         return URL(string: url) ?? URL(fileURLWithPath: "")
     }
