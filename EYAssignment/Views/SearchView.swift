@@ -13,7 +13,7 @@ struct SearchView: View {
     @Environment(\.isSearching) private var isSearching
     @Binding var searchText: String
     @StateObject var searchVM = SearchViewModel.shared
-    @StateObject var trendingItemVM = HomeViewModel()
+    @StateObject var trendingItemVM = HomeViewModel( gifAPI: GifAPI())
     var body: some View {
         if isSearching {
             HomeListView(trendingItems: trendingSearchItems)

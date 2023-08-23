@@ -14,6 +14,9 @@
 		8432F71F2A94F9B80000799B /* FavouriteGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432F71E2A94F9B80000799B /* FavouriteGridCell.swift */; };
 		8432F7212A94FF2F0000799B /* FavouriteListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432F7202A94FF2F0000799B /* FavouriteListCell.swift */; };
 		8432F7232A9500760000799B /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432F7222A9500760000799B /* LocalFileManager.swift */; };
+		8432F72E2A960F120000799B /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432F72D2A960F120000799B /* MockService.swift */; };
+		8432F7302A9611E30000799B /* SamplePost.json in Resources */ = {isa = PBXBuildFile; fileRef = 8432F72F2A9611E30000799B /* SamplePost.json */; };
+		8432F7352A9622A40000799B /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 8432F7342A9622A40000799B /* SDWebImageSwiftUI */; };
 		84F7E6672A947A14003B9133 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7E6662A947A14003B9133 /* SearchView.swift */; };
 		84F7E6692A947A9F003B9133 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7E6682A947A9F003B9133 /* SearchViewModel.swift */; };
 		84FD7DB32A90E18A00C66970 /* EYAssignmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FD7DB22A90E18A00C66970 /* EYAssignmentApp.swift */; };
@@ -58,6 +61,8 @@
 		8432F71E2A94F9B80000799B /* FavouriteGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteGridCell.swift; sourceTree = "<group>"; };
 		8432F7202A94FF2F0000799B /* FavouriteListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteListCell.swift; sourceTree = "<group>"; };
 		8432F7222A9500760000799B /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
+		8432F72D2A960F120000799B /* MockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockService.swift; sourceTree = "<group>"; };
+		8432F72F2A9611E30000799B /* SamplePost.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SamplePost.json; sourceTree = "<group>"; };
 		84F7E6662A947A14003B9133 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		84F7E6682A947A9F003B9133 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		84FD7DAF2A90E18A00C66970 /* EYAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EYAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8432F7352A9622A40000799B /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +134,21 @@
 			path = CustomCell;
 			sourceTree = "<group>";
 		};
+		8432F7242A95F9530000799B /* Mock Test */ = {
+			isa = PBXGroup;
+			children = (
+				8432F72D2A960F120000799B /* MockService.swift */,
+			);
+			path = "Mock Test";
+			sourceTree = "<group>";
+		};
+		8432F7332A9622A40000799B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		84FD7DA62A90E18A00C66970 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +156,7 @@
 				84FD7DC22A90E18D00C66970 /* EYAssignmentTests */,
 				84FD7DCC2A90E18D00C66970 /* EYAssignmentUITests */,
 				84FD7DB02A90E18A00C66970 /* Products */,
+				8432F7332A9622A40000799B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,6 +179,7 @@
 				84FD7DDC2A90E1D500C66970 /* Models */,
 				84FD7DB22A90E18A00C66970 /* EYAssignmentApp.swift */,
 				84FD7DB42A90E18A00C66970 /* ContentView.swift */,
+				8432F72F2A9611E30000799B /* SamplePost.json */,
 				84FD7DB62A90E18C00C66970 /* Assets.xcassets */,
 				84FD7DB82A90E18C00C66970 /* Preview Content */,
 			);
@@ -223,6 +246,7 @@
 		84FD7DEC2A90E34400C66970 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				8432F7242A95F9530000799B /* Mock Test */,
 				84FD7DED2A90E37000C66970 /* GifAPI.swift */,
 			);
 			path = Network;
@@ -265,6 +289,9 @@
 				84FD7DC12A90E18D00C66970 /* PBXTargetDependency */,
 			);
 			name = EYAssignmentTests;
+			packageProductDependencies = (
+				8432F7342A9622A40000799B /* SDWebImageSwiftUI */,
+			);
 			productName = EYAssignmentTests;
 			productReference = 84FD7DBF2A90E18D00C66970 /* EYAssignmentTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -339,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84FD7DBA2A90E18C00C66970 /* Preview Assets.xcassets in Resources */,
+				8432F7302A9611E30000799B /* SamplePost.json in Resources */,
 				84FD7DB72A90E18C00C66970 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,6 +401,7 @@
 				8405A4CE2A90F3EC0098609F /* DataStorage.swift in Sources */,
 				84FD7DE92A90E2F900C66970 /* HomeViewModel.swift in Sources */,
 				84FD7DE52A90E2B700C66970 /* HomeListView.swift in Sources */,
+				8432F72E2A960F120000799B /* MockService.swift in Sources */,
 				84FD7DEB2A90E31900C66970 /* FavouriteViewModel.swift in Sources */,
 				8405A4CC2A90F25D0098609F /* EmptyPlaceholderView.swift in Sources */,
 				84F7E6672A947A14003B9133 /* SearchView.swift in Sources */,
@@ -715,6 +744,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		8432F7182A94F3700000799B /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8432F7172A94F3700000799B /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+		8432F7342A9622A40000799B /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8432F7172A94F3700000799B /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;

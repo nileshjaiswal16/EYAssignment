@@ -18,15 +18,16 @@ class SearchViewModel: ObservableObject {
     @Published var searchQuery = ""
     @Published var searchTaskToken: SearchTaskToken
     
-    private let gifAPI = GifAPI.shared
+    private let gifAPI: GifAPI
     
-    init(trendingItems: [TrendingItem]? = nil) {
+    init(trendingItems: [TrendingItem]? = nil, gifAPI: GifAPI) {
         if let trendingItems = trendingItems {
             self.phase = .success(trendingItems)
         } else {
             self.phase = .empty
             
         }
+        self.gifAPI = gifAPI
         self.searchTaskToken = SearchTaskToken(token: Date())
     }
     
@@ -34,7 +35,7 @@ class SearchViewModel: ObservableObject {
         searchQuery.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
-    static let shared = SearchViewModel()
+    static let shared = SearchViewModel(gifAPI: GifAPI())
     
     func searchItems() async {
         if Task.isCancelled { return }

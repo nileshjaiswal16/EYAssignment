@@ -7,10 +7,20 @@
 
 import Foundation
 
-struct GifAPI {
+protocol ServiceProtocol {
     
-    static let shared = GifAPI()
-    private init() {}
+    func search(for query: String) async throws -> [TrendingItem]
+    func fetch() async throws -> [TrendingItem]
+    func fetchTrendingGif(from url: URL) async throws -> [TrendingItem]
+    func generateSearchURL(from query: String) -> URL
+    func generateTrendingURL() -> URL
+   
+}
+
+final class GifAPI: ServiceProtocol {
+    
+   // static let shared = GifAPI()
+    //private init() {}
     
     private let apiKey = "6IDzHHc87gA5fUXk0jIe6afMSwpKUCam"
     private let session = URLSession.shared
@@ -28,7 +38,7 @@ struct GifAPI {
         try await fetchTrendingGif(from: generateSearchURL(from: query))
     }
     
-    private func fetchTrendingGif(from url: URL) async throws -> [TrendingItem] {
+    func fetchTrendingGif(from url: URL) async throws -> [TrendingItem] {
         let (data, response) = try await session.data(from: url)
         
         guard let response = response as? HTTPURLResponse else {
@@ -53,7 +63,7 @@ struct GifAPI {
         NSError(domain: "GIFAPI", code: code, userInfo: [NSLocalizedDescriptionKey: description])
     }
     
-    private func generateSearchURL(from query: String) -> URL {
+    func generateSearchURL(from query: String) -> URL {
         let percentEncodedString = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? query
         
         let url = "https://api.giphy.com/v1/gifs/search?api_key=6IDzHHc87gA5fUXk0jIe6afMSwpKUCam&q=\(percentEncodedString)&limit=10&offset=0&rating=g&lang=en&bundle=messaging_non_clips"
@@ -62,7 +72,7 @@ struct GifAPI {
         return URL(string: url) ?? URL(fileURLWithPath: "")
     }
     
-    private func generateTrendingURL() -> URL {
+    func generateTrendingURL() -> URL {
         let url = "https://api.giphy.com/v1/gifs/trending?api_key=6IDzHHc87gA5fUXk0jIe6afMSwpKUCam&limit=10&offset=0&rating=g&bundle=messaging_non_clips"
        
         return URL(string: url) ?? URL(fileURLWithPath: "")

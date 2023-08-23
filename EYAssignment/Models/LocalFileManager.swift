@@ -37,14 +37,18 @@ class LocalFileManager {
                 print("couldn't remove file at path", removeError)
             }
         }
-        do { try FileManager.default.copyItem(
-            at: tempURL,
-            to: fileURL
-        )
-            print("Image ID: \(toFile) \(tempURL) \(fileURL)")
-        } catch let error {
-            print("error saving file with error", error)
+        DispatchQueue.global().async {
+            do {
+                try FileManager.default.copyItem(
+                  at: tempURL,
+                  to: fileURL
+            )
+                print("Image ID: \(toFile) \(tempURL) \(fileURL)")
+            } catch let error {
+                print("error saving file with error", error)
+            }
         }
+       
     }
     func download(url: URL, toFile:String) {
         // Download the remote URL to a file
@@ -56,32 +60,6 @@ class LocalFileManager {
             self.saveData(tempURL: tempURL, toFile: toFile)
         }
         task.resume()
-    }
-    func save(tempUrl: URL,toFile:String) {
-        guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
-        let fileURL = documentsDirectory.appendingPathComponent(toFile)
-        
-        //Checks if file exists, removes it if so.
-        if FileManager.default.fileExists(atPath: fileURL.path) {
-            do {
-                try FileManager.default.removeItem(atPath: fileURL.path)
-                print("Removed old image")
-            } catch let removeError {
-                print("couldn't remove file at path", removeError)
-            }
-            
-        }
-        
-        do {
-            try FileManager.default.copyItem(
-                at: tempUrl,
-                to: fileURL
-            )
-            print("Image ID: \(toFile) \(tempUrl) \(fileURL)")
-        } catch let error {
-            print("error saving file with error", error)
-        }
-        
     }
      func getPathForImage(name:String) -> URL?{
          

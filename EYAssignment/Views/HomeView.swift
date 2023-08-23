@@ -11,7 +11,7 @@ struct HomeView: View {
     @Environment(\.isSearching) private var isSearching
     @State private var searchText: String = ""
     @StateObject var searchVM = SearchViewModel.shared
-    @StateObject var trendingItemVM = HomeViewModel()
+    @StateObject var trendingItemVM = HomeViewModel( gifAPI: GifAPI())
    
     var body: some View {
         NavigationView {
@@ -23,9 +23,10 @@ struct HomeView: View {
                     }
                 }
                 .onSubmit(of: .search, search)
-            HomeListView(trendingItems: trendingItems)
-                .overlay(overlayView)
-                .task(id: trendingItemVM.fetchTaskToken, loadTask)
+                HomeListView(trendingItems: trendingItems)
+                    .overlay(overlayView)
+                    .task(id: trendingItemVM.fetchTaskToken, loadTask)
+            
                 
         }
         
@@ -68,7 +69,7 @@ struct HomeView_Previews: PreviewProvider {
     @State static var searchText = ""
     
     static var previews: some View {
-        HomeView(trendingItemVM: HomeViewModel(trendingItems: TrendingItem.previewData))
+        HomeView(trendingItemVM: HomeViewModel(trendingItems: TrendingItem.previewData, gifAPI: GifAPI()))
             .environmentObject(favouriteVM)
     }
 }
